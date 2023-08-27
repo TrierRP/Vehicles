@@ -17,7 +17,7 @@ jobs:
         
     - name: Update README with directories
       run: |
-       echo "Listing directories and subdirectories with hierarchy, excluding 'stream' and 'data'..."
+       echo "Listing directories and subdirectories with hierarchy, excluding '.git', '.github', 'stream', and 'data'..."
 
        # Entfernen des alten Eintrags zwischen den Markierungen
        awk '/<!-- DIR_LIST_START -->/{print; flag=1; next} /<!-- DIR_LIST_END -->/{flag=0; print; next} flag{next} 1' README.md > temp_readme.md && mv temp_readme.md README.md
@@ -25,8 +25,8 @@ jobs:
        # Erstelle eine temporäre Datei für die Verzeichnisse
        touch temp_dirs.md
       
-       # Finde alle Ordner, schließe die spezifizierten Ordner aus und schreibe sie in die temporäre Datei
-       find . -type d | cut -c 3- | grep -vE '^\.\|_\|/stream|/data' | while IFS= read -r dir; do
+       # Finde alle Ordner, schließe die spezifizierten Ordner und deren Unterordner aus und schreibe sie in die temporäre Datei
+       find . -type d | cut -c 3- | grep -vE '^\.\|_\|^.git\|^.github\|/stream\|/data' | while IFS= read -r dir; do
          depth=$(echo "$dir" | tr -cd '/' | wc -c)
          indent=$(printf '   %.0s' $(seq 1 $depth))
          # Extrahiere den Ordnernamen für die Anzeige
