@@ -19,8 +19,12 @@ jobs:
       run: |
         echo "# Liste der Verzeichnisse in diesem Repository" > README.md
         for dir in $(find . -maxdepth 1 -type d | cut -c 3- | grep -v '^\.'); do
+          echo "Found directory: $dir"
           echo "- [$dir](./$dir/)" >> README.md
         done
+        echo "------ Updated README content ------"
+        cat README.md
+        echo "-------------------------------------"
         
     - name: Commit and push if changed
       run: |
