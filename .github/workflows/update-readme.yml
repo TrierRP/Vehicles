@@ -25,8 +25,7 @@ jobs:
          indent=$(printf '   %.0s' $(seq 1 $depth))
          # Extrahiere den Ordnernamen für die Anzeige
          display_name=$(basename "$dir")
-         echo "${indent}${display_name}" >> temp_dirs.md
-         echo "${indent}   [Link](./$dir/)" >> temp_dirs.md
+         echo "${indent}- ${display_name}" >> temp_dirs.md
        done
        # Kombiniere die Teile der README.md mit der temporären Datei
        awk '/<!-- DIR_LIST_START -->/{print;system("cat temp_dirs.md");next} /<!-- DIR_LIST_END -->/{next} 1' README.md > temp_readme.md
