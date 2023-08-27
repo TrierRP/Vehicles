@@ -6,35 +6,29 @@ on:
     - '**/'
     - '.github/workflows/update-readme.yml'
 
-jobs:
-  update-readme:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Check out code
-      uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        
-    - name: Update README with directories
-      run: |
-        echo "# Liste der Verzeichnisse in diesem Repository" > README.md
-        for dir in $(find . -maxdepth 1 -type d | cut -c 3- | grep -v '^\.'); do
-          echo "Found directory: $dir"
-          echo "- [$dir](./$dir/)" >> README.md
-        done
-        echo "------ Updated README content ------"
-        cat README.md
-        echo "-------------------------------------"
-        
-    - name: Commit and push if changed
-      run: |
-        git diff
-        git config --global user.name 'GitHub Actions'
-        git config --global user.email 'actions@github.com'
-        git add README.md
-        git status
-        git commit -m "Automatically update README with directory list" && git push origin HEAD:main || echo "No changes to commit/push"
-
-        git diff --cached
-        git commit -m "Automatically update README with directory list" || echo "No changes to commit"
-        git push origin HEAD:main || echo "No changes to push"
+    jobs:
+      update-readme:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Check out code
+          uses: actions/checkout@v2
+          with:
+            token: ${{ secrets.GITHUB_TOKEN }}
+            
+        - name: Update README with directories
+          run: |
+            sed -i '/<!-- DIR_LIST_START -->/,/<!-- DIR_LIST_END -->/c\<!-- DIR_LIST_START -->' README.md
+            for dir in $(find . -maxdepth 1 -type d | cut -c 3- | grep -v '^\.'); do
+              echo "- [$dir](./$dir/)" >> README.md
+            done
+            echo "<!-- DIR_LIST_END -->" >> README.md
+            
+        - name: Commit and push if changed
+          run: |
+            git diff
+            git config --global user.name 'GitHub Actions'
+            git config --global user.email 'actions@github.com'
+            git add README.md
+            git status
+            git commit -m "Automatically update README with directory list" && git push origin HEAD:main || echo "No changes to commit/push"
+    
