@@ -12,7 +12,9 @@ jobs:
     steps:
     - name: Check out code
       uses: actions/checkout@v2
-      
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        
     - name: Update README with directories
       run: |
         echo "# Liste der Verzeichnisse in diesem Repository" > README.md
@@ -28,4 +30,4 @@ jobs:
         git add -A
         git diff --cached
         git commit -m "Automatically update README with directory list" || echo "No changes to commit"
-        git push
+        git push origin HEAD:main || echo "No changes to push"
