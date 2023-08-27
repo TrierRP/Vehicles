@@ -17,10 +17,10 @@ jobs:
         
     - name: Update README with directories
       run: |
-       echo "Listing directories and subdirectories with hierarchy..."
+       echo "Listing directories and subdirectories with hierarchy, excluding 'stream' and 'data'..."
        # Erstelle eine temporäre Datei für die Verzeichnisse
        touch temp_dirs.md
-       find . -type d | cut -c 3- | grep -v '^\.\|_' | while IFS= read -r dir; do
+       find . -type d | cut -c 3- | grep -v '^\.\|_\|/stream\|/data' | while IFS= read -r dir; do
          depth=$(echo "$dir" | tr -cd '/' | wc -c)
          indent=$(printf '   %.0s' $(seq 1 $depth))
          # Extrahiere den Ordnernamen für die Anzeige
