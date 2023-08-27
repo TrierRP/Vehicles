@@ -10,12 +10,12 @@ jobs:
       update-readme:
         runs-on: ubuntu-latest
         steps:
-        - name: Check out code
+      - name: Check out code
           uses: actions/checkout@v2
           with:
             token: ${{ secrets.GITHUB_TOKEN }}
             
-        - name: Update README with directories
+      - name: Update README with directories
           run: |
             echo "Listing directories..."
             # Erstelle eine temporäre Datei für die Verzeichnisse
@@ -28,7 +28,7 @@ jobs:
             mv temp_readme.md README.md
             rm temp_dirs.md
             
-          - name: Commit and push if changed
+        - name: Commit and push if changed
             run: |
               git diff
               git config --global user.name 'GitHub Actions'
