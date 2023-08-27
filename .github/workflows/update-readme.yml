@@ -22,8 +22,11 @@ jobs:
        touch temp_dirs.md
        find . -type d | cut -c 3- | grep -v '^\.\|_' | while IFS= read -r dir; do
          depth=$(echo "$dir" | tr -cd '/' | wc -c)
-         indent=$(printf '  %.0s' $(seq 1 $depth))
-         echo "${indent}- [$dir](./$dir/)" >> temp_dirs.md
+         indent=$(printf '   %.0s' $(seq 1 $depth))
+         # Extrahiere den Ordnernamen für die Anzeige
+         display_name=$(basename "$dir")
+         echo "${indent}${display_name}" >> temp_dirs.md
+         echo "${indent}   [Link](./$dir/)" >> temp_dirs.md
        done
        # Kombiniere die Teile der README.md mit der temporären Datei
        awk '/<!-- DIR_LIST_START -->/{print;system("cat temp_dirs.md");next} /<!-- DIR_LIST_END -->/{next} 1' README.md > temp_readme.md
