@@ -3,8 +3,7 @@ name: Update Directory Listings
 on:
   push:
     paths:
-      - '**/*'
-      - 'Addons'
+      - 'Addons/**'
     branches:
       - main # oder der Name des Hauptzweigs Ihres Repos
 
