@@ -157,4 +157,77 @@ Die Komplette Fahrzeugliste
    - [Infiniti]
       - [QX80]
          - QX80
+   - [Jaguar]
+      - [XF]
+         - jagpr8
+      - [XJ 690]
+         - xj690
+   - [Jeep]
+      - [Rubicon]
+         - jeepg
+      - [Wagoneer 1991]
+         - wagoneer91
+   - [Lamborghini]
+      - [Diablo SV ]
+         - ldsv
+      - [Huracán EVO]
+         - hevo
+      - [Performante 2018]
+         - 18performante
+            - client
+   - [Mazda]
+      - [RX-7]
+         - fc3s
+   - [McLaren]
+      - [600 lt]
+         - 600lt
+      - [720s]
+         - 720s18
+      - [765 Lt]
+         - 765ltmso
+   - [Mercedes-Benz]
+      - [AMG G63]
+         - gclas9
+      - [AMG GTR 2020]
+         - AMGGTRR20
+      - [C63 Coupe AMG]
+         - c63coupe
+      - [G63 AMG]
+         - w463
+      - [GT63 AMG]
+         - sclgt63s
+      - [s650 Maybach]
+         - 19sclass
+   - [Mitsubishi]
+      - [AZ 1]
+         - az1
+               - az1_mods
+      - [Evo 10]
+         - evo10
+      - [GTO 1991]
+         - gto91
+   - [Nissan]
+      - [240sx]
+         - rmod240sx
+      - [R34]
+         - er34
+      - [R35]
+         - r35
+   - [Pagani]
+      - [Huayra]
+         - HUAYRA
+      - [Imola]
+         - IMOLA
+   - [Peugeot]
+      - [504]
+         - peu504naj
+   - [Porsche]
+      - [GT3RS 2019]
+         - 2019gt3rs
+   - [Renault]
+      - [Twizy]
+         - twizy
+   - [Seat]
+      - [Ibiza 2022]
+         - ibiza2022
 <!-- DIR_LIST_END -->
