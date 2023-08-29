@@ -5,25 +5,7 @@ Die Komplette Fahrzeugliste
 ## Liste der Verzeichnisse
 
 <!-- DIR_LIST_START -->
-   - 
-   - .git
-   - objects
-      - info
-      - pack
-   - branches
-   - refs
-      - tags
-      - remotes
-         - origin
-      - heads
-   - info
-   - hooks
-   - logs
-      - refs
-         - remotes
-            - origin
-         - heads
-   - Addons
+   - dons
    - Alfa Romeo
       - [Giulia QV]
          - aqv
@@ -180,8 +162,7 @@ Die Komplette Fahrzeugliste
          - rs5
             - stream
             - data
-   - .github
-   - workflows
+<!-- DIR_LIST_END -->
 <!-- DIR_LIST_END -->
 <!-- DIR_LIST_END -->
 <!-- DIR_LIST_END -->
