@@ -92,6 +92,14 @@ Die Komplette Fahrzeugliste
          - rs62
       - [RS5 2011]
          - rs5
+   - [Abarth]
+      - [500 EsseEsse]
+         - fiat500
+      - [124 Spider]
+         - 124spider
+      - [595ss]
+         - yFiat595ss
+<!-- DIR_LIST_END -->
 <!-- DIR_LIST_END -->
 <!-- DIR_LIST_END -->
 <!-- DIR_LIST_END -->
