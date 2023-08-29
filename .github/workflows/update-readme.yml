@@ -5,6 +5,7 @@ on:
     paths:
       - 'Addons/**'
       - 'README.md'
+      - '.github/workflows/update-readme.yml'
     branches:
       - main  # Oder der Name Ihres Hauptzweigs
 
@@ -27,7 +28,7 @@ jobs:
 
         # Generate new directory listing
         touch temp_addons.md
-        find ./Addons -type d | cut -c 9- | while IFS= read -r dir; do
+        find ./Addons -type d | cut -c 3- | while IFS= read -r dir; do
           depth=$(echo "$dir" | tr -cd '/' | wc -c)
           indent=$(printf '   %.0s' $(seq 1 $depth))
           display_name=$(basename "$dir")
