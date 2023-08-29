@@ -36,7 +36,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add README.md Addons_Content.md
+        git add README.md
         if git commit -m "Automatically update directory listings"; then
           git push
         fi
