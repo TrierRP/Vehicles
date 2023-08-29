@@ -99,4 +99,29 @@ Die Komplette Fahrzeugliste
          - bencongt13
       - [Continental Supersport 2017]
          - ben17
+   - [Bugatti]
+      - [110]
+         - eb110
+   - [Cadillac]
+      - [Eldorado 1957]
+         - eldorado57
+   - [Chevrolet]
+      - [Camaro1990]
+         - camaro90
+      - [Camaro2021]
+         - 21camaro
+   - [Corvette]
+      - [C8]
+         - c8
+      - [Impala1959]
+         - impala59
+      - [ZR1]
+         - czr1
+   - [Dodge]
+      - [Charger Super Bee]
+         - chargersb
+      - [Deamon]
+         - redeyed
+      - [Viper]
+         - viper
 <!-- DIR_LIST_END -->
