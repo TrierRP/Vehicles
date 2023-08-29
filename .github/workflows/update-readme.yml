@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'Addons/**'
+      - '**/update-readme.yml'
     branches:
       - main # oder der Name des Hauptzweigs Ihres Repos
 
