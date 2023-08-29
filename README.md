@@ -124,4 +124,37 @@ Die Komplette Fahrzeugliste
          - redeyed
       - [Viper]
          - viper
+   - [Ferrari]
+      - [488]
+         - 4881
+      - [Fxx K Evo]
+         - FXXKEVO
+      - [Monza]
+         - rrmonza
+   - [Fiat]
+      - [Uno_Turbo]
+         - tmfiatunot
+   - [Ford]
+      - [Bronco]
+         - wildtrak
+      - [Fastback1966]
+         - 66fastback
+      - [Focus RS]
+         - FOCUSRS
+      - [GT2017]
+         - gt17
+      - [Mach E]
+         - mache
+      - [Mustang Boss GT]
+         - rmodmustang
+      - [Mustang RTR]
+         - mustang2019rtr
+      - [Ranger2019]
+         - ranger2019
+   - [Honda]
+      - [Civic]
+         - hondacivictr
+   - [Infiniti]
+      - [QX80]
+         - QX80
 <!-- DIR_LIST_END -->
