@@ -1,20 +1,32 @@
 name: Update README
+
 on:
   push:
     branches:
       - main
+      
+  workflow_dispatch: # Zusätzliche Option, um die Workflow manuell auszulösen
+
 jobs:
   update-readme:
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: actions/checkout@v3
-      - name: Update README
-        run: |
-          echo "### Addons"
-          echo ""
-          for dir in $(find ./Addons -type d); do
-            echo "- $dir"
-          done
-          echo ""
-          echo "### End of Addons"
-          gh-pages-update README.md
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: List Addons folder
+      run: ls Addons > README.md
+      
+    - name: Commit changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add README.md
+        git commit -m "Update README after push" || echo "No changes to commit"
+        
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        branch: main
+
