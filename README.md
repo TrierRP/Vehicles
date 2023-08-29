@@ -230,4 +230,77 @@ Die Komplette Fahrzeugliste
    - [Seat]
       - [Ibiza 2022]
          - ibiza2022
+   - [Tebex]
+      - Regera
+      - [330P4]
+         - 330p4
+      - [F12]
+         - Asd3DUKESF12
+      - [Jesko]
+         - jesko
+      - [Lc500]
+         - lc500
+      - [M3E46]
+         - m3e46
+      - [Senna]
+         - senna
+      - [Supra turbo mk4]
+         - a80
+      - [veyron grand sport l'or blanc]
+         - BUGVR
+      - [xj220 s twr]
+         - jagtwr
+      - fordgtultimate
+      - ocnetrongt
+      - r34speedhunter
+   - [Tesla]
+      - [Cybertruck]
+         - cybertruck
+      - [model s plaid]
+         - plaid
+   - [Toyota]
+      - [4 Runner]
+         - 4rune
+      - [Supra A70]
+         - a70
+               - a70_mods
+      - [Supra MK5]
+         - gxa90
+   - [Volkswagen]
+      - [Amarok TDI V6]
+         - amarok
+      - [Golf 3 GIT VR6]
+         - mk3vr6
+      - [Golf 6]
+         - golfmk6
+      - [Golf 7 GTI]
+         - golf7gti
+            - audioconfig
+      - [Golf 8 GTI]
+         - golf8gti
+      - [T1]
+         - type258
+   - [x_Players]
+      - [Diego]
+         - [Ford Mansory Gt]
+            - mgt17
+      - [Noe]
+         - [Mustang]
+            - Keenblock
+         - [Sian]
+            - SIAN
+      - [Sven]
+         - [E 55 AMG]
+            - benze55
+         - [Maybach]
+            - 2018S650P
+         - edwchief
+      - [Victoria]
+         - [Fxx-K Hybrid]
+            - fxxk
+      - [Yannick]
+         - [Asap 190 E]
+            - 190asap
+         - [Bolide]
+            - bolide
 <!-- DIR_LIST_END -->
