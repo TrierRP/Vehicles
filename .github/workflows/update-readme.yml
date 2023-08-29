@@ -1,32 +1,48 @@
-name: Update README
+name: Update README with Addons Directory
 
 on:
   push:
+    paths:
+      - 'Addons/**'
     branches:
-      - main
-      
-  workflow_dispatch: # Zusätzliche Option, um die Workflow manuell auszulösen
+      - main  # Oder der Name Ihres Hauptzweigs
 
 jobs:
-  update-readme:
+  update:
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Checkout repository
+    - name: Checkout Code
       uses: actions/checkout@v2
-      
-    - name: List Addons folder
-      run: ls Addons > README.md
-      
-    - name: Commit changes
+      with:
+        token: ${{ secrets.MY_GITHUB_TOKEN }}
+
+    - name: Update README with "Addons" directory content
+      run: |
+        echo "Listing directories and subdirectories under 'Addons' in README.md..."
+
+        # Remove old directory listing
+        awk '/<!-- ADDONS_LIST_START -->/{print; flag=1; next} /<!-- ADDONS_LIST_END -->/{flag=0; print; next} flag{next} 1' README.md > temp_readme.md
+        mv temp_readme.md README.md
+
+        # Generate new directory listing
+        touch temp_addons.md
+        find ./Addons -type d | cut -c 9- | while IFS= read -r dir; do
+          depth=$(echo "$dir" | tr -cd '/' | wc -c)
+          indent=$(printf '   %.0s' $(seq 1 $depth))
+          display_name=$(basename "$dir")
+          echo "${indent}- ${display_name}" >> temp_addons.md
+        done
+
+        # Insert new directory listing into README.md
+        awk '/<!-- ADDONS_LIST_START -->/{print; system("cat temp_addons.md"); print "<!-- ADDONS_LIST_END -->"; next} 1' README.md > temp_readme.md
+        mv temp_readme.md README.md
+        rm temp_addons.md
+
+    - name: Commit and push changes
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add README.md
-        git commit -m "Update README after push" || echo "No changes to commit"
-        
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        branch: main
-
+        if git commit -m "Update Addons directory listing"; then
+          git push
+        fi
