@@ -28,7 +28,7 @@ jobs:
           display_name=$(basename "$dir")
           echo "${indent}- ${display_name}" >> temp_dirs.md
         done
-        awk '/<!-- DIR_LIST_START -->/{print; system("cat temp_dirs.md"); print "<!-- DIR_LIST_END -->"; next} 1' README.md > temp_readme.md && mv temp_readme.md README.md
+        awk '/<!-- DIR_LIST_START -->/{print; system("cat temp_dirs.md"); next} 1' README.md > temp_readme.md && mv temp_readme.md README.md
         rm temp_dirs.md
 
     - name: Commit changes
