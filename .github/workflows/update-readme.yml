@@ -5,9 +5,6 @@ on:
     paths:
     - '**/'
     - '.github/workflows/update-readme.yml'
-    - '!.git'
-    - '!.github'
-
 
 jobs:
   update-readme:
