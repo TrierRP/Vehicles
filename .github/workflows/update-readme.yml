@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'Addons/**'
+      - 'README.md'
     branches:
       - main  # Oder der Name Ihres Hauptzweigs
 
