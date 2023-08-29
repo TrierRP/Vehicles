@@ -3,7 +3,7 @@ name: Update README with Addons Directory
 on:
   push:
     paths:
-      - 'Addons/**'
+      - '**/Addons/**'
       - 'README.md'
       - '.github/workflows/update-readme.yml'
     branches:
